@@ -1,0 +1,59 @@
+class Task
+{
+public static void main(String args[])
+{
+int empid=Integer.parseInt(args[0]);
+int employee_num[]={1001,1002,1003,1004,1005,1006,1007};
+String employee_name[]={"Ashish","Sushma","Rahul","Chahat","Ranjan","Suman","Tanmay"};
+String joining_date[]={"01/04/2009","23/08/2012","12/11/2008","29/01/2013","16/07/2005","01/01/2000","12/06/2006"};
+char descode[]={'e','c','k','r','m','e','c'};
+String dept[]={"R&D","PM","Acct","Front desk","Eng","Manufacturing","PM"};
+int basic[]={20000,30000,10000,12000,50000,23000,29000};
+int HRA[]=new int[7];
+HRA[0]=8000;
+HRA[1]=12000;
+HRA[2]=8000;
+HRA[3]=6000;
+HRA[4]=20000;
+HRA[5]=9000;
+HRA[6]=12000;
+int IT[]={3000,9000,1000,2000,20000,4400,10000,};
+System.out.println("\tEMPLOYEE DETAILS FOR GIVEN IDNUMBER:");
+int l=0;
+for(int i=0;i<7;i++)
+{
+if(empid==employee_num[i])
+{
+l=1;
+System.out.println("Employeenumber"+"\t"+"Employeename"+"\t"+"Department"+"\t"+"Designation"+"\t"+"Salary");
+System.out.print(employee_num[i]+"\t"+employee_name[i]+"\t\t"+dept[i]+"\t");
+switch(descode[i])
+{
+case 'e':
+System.out.println("Engineer"+"\t\t"+(basic[i]+HRA[i]+20000-IT[i]));
+break;
+case 'c':
+System.out.println("Consultant"+"\t\t"+(basic[i]+HRA[i]+32000-IT[i]));
+break;
+case 'k':
+System.out.println("Clerk"+"\t\t"+(basic[i]+HRA[i]+12000-IT[i]));
+break;
+case 'r':
+System.out.println("Receptionist"+"\t\t"+(basic[i]+HRA[i]+15000-IT[i]));
+break;
+case 'm':
+System.out.println("Manager"+"\t\t"+(basic[i]+HRA[i]+40000-IT[i]));
+break;
+default:
+System.out.println("Error");
+break;
+}
+break;
+}
+}
+if(l==0)
+{
+System.out.println("There is no employee with employee id\t"+empid);
+}
+}
+}
